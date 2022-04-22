@@ -29,17 +29,19 @@ class LoginPage:
     def check_invalid_username_message(self):
         self.driver.find_element(By.XPATH, self.username_textbox_xpath).clear()
         self.driver.find_element(By.NAME, self.password_textbox_name).clear()
-        msg_2 = self.driver.find_element(By.XPATH, self.invalidUsername_message_xpath).text
-        return msg_2
+        # msg_2 = self.driver.find_element(By.XPATH, self.invalidUsername_message_xpath).text
+        message = self.driver.find_element(By.XPATH, '//div[@class="form-line auth-result"]').text
+        return message
 
     def check_invalid_password_message(self):
         self.driver.find_element(By.XPATH, self.username_textbox_xpath).clear()
         self.driver.find_element(By.NAME, self.password_textbox_name).clear()
-        msg_3 = self.driver.find_element(By.XPATH, self.invalidPassword_message_xpath).text
-        return msg_3
+        msg_2 = self.driver.find_element(By.XPATH, self.invalidPassword_message_xpath).text
+        return msg_2
 
     def check_invalid_username_and_password_message(self):
         self.driver.find_element(By.XPATH, self.username_textbox_xpath).clear()
         self.driver.find_element(By.NAME, self.password_textbox_name).clear()
-        msg_4 = self.driver.find_element(By.XPATH, self.invalidUsernameAndPassword_xpath).text
-        return msg_4
+        # msg = self.driver.find_element(By.XPATH, self.invalidUsernameAndPassword_xpath).text
+        message = self.driver.find_element(By.XPATH, '//div[@class="form-line auth-result"]').text
+        return message
